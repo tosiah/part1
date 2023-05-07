@@ -42,7 +42,7 @@ const CountryName = ({name, onClickHandler}) => {
     </div>)
 }
 
-const Countries = ({countriesList, showDetails, showCapitalWeather, weather}) => {
+const Countries = ({countriesList, showDetails}) => {
     if (!countriesList) {
         return null
     }
