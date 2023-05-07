@@ -1,0 +1,14 @@
+{
+  "persons": [
+    {
+      "name": "Kacper",
+      "phoneNumber": "1234123",
+      "id": 5
+    },
+    {
+      "name": "Andrzej",
+      "phoneNumber": "112334561235123",
+      "id": 6
+    }
+  ]
+}
