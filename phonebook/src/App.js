@@ -39,7 +39,7 @@ const PersonDetails = ({name, phoneNumber, onClickHandler}) => {
 const Persons = ({personsList, handlePersonDeletion}) => {
     return <div>{personsList.map((person) => <PersonDetails key={person.id} name={person.name}
                                                             phoneNumber={person.phoneNumber}
-                                                            onClickHandler={() => handlePersonDeletion(person.name, person.id)}></PersonDetails>)}</div>
+                                                            onClickHandler={() => handlePersonDeletion(person.name, person.id)}/>)}</div>
 }
 
 
@@ -135,11 +135,11 @@ const App = () => {
     return (
         <div>
             <h2>Phonebook</h2>
-            <Notification name = {nameForNotification}></Notification>
-            <ErrorNotification name = {nameForErrorNotification}></ErrorNotification>
+            <Notification name = {nameForNotification}/>
+            <ErrorNotification name = {nameForErrorNotification}/>
             <div>debug: {newName}</div>
             <Search searchPhrase={searchPhrase}
-                    onChangeHandler={(event) => setSearchPhrase(event.target.value)}></Search>
+                    onChangeHandler={(event) => setSearchPhrase(event.target.value)}/>
             <Form name={newName} phoneNumber={newPhoneNumber}
                   onChangeNameHandler={(event) => setNewName(event.target.value)}
                   onChangePhoneNumberHandler={(event) => setNewPhoneNumber(event.target.value)}
@@ -147,7 +147,7 @@ const App = () => {
             </Form>
             <h2>Numbers</h2>
             <div>
-                <Persons personsList={personsToShow()} handlePersonDeletion={handlePersonDeletion}></Persons>
+                <Persons personsList={personsToShow()} handlePersonDeletion={handlePersonDeletion}/>
             </div>
         </div>
     )
