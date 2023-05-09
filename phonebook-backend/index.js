@@ -37,9 +37,6 @@ let persons = [
     }
 ]
 
-app.get('/', (request, response) => { response.send('phonebook-backend/build/index.html')
-})
-
 app.get('/api/persons', (request, response) => {
     response.json(persons)
 })
