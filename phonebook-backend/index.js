@@ -18,22 +18,22 @@ let persons = [
     {
         "id": 1,
         "name": "Arto Hellas",
-        "number": "040-123456"
+        "phoneNumber": "040-123456"
     },
     {
         "id": 2,
         "name": "Ada Lovelace",
-        "number": "39-44-5323523"
+        "phoneNumber": "39-44-5323523"
     },
     {
         "id": 3,
         "name": "Dan Abramov",
-        "number": "12-43-234345"
+        "phoneNumber": "12-43-234345"
     },
     {
         "id": 4,
         "name": "Mary Poppendieck",
-        "number": "39-23-6423122"
+        "phoneNumber": "39-23-6423122"
     }
 ]
 
@@ -63,8 +63,8 @@ app.delete('/api/persons/:id', (request, response) => {
 
 app.post('/api/persons', (request, response) => {
     const newId = Math.floor((Math.random()*1000))
-    if(!request.body.name || !request.body.number){
-        return response.status(400).json(`Name and number must be given for a new person in a phonebook`)
+    if(!request.body.name || !request.body.phoneNumber){
+        return response.status(400).json(`Name and phoneNumber must be given for a new person in a phonebook`)
     }
     if(persons.find(p => p.name === request.body.name)){
         return response.status(400).json(`Name must be unique`)
@@ -72,7 +72,7 @@ app.post('/api/persons', (request, response) => {
     const newPerson = ({
         id: newId,
         name: request.body.name,
-        number: request.body.number
+        phoneNumber: request.body.phoneNumber
     })
     persons = [...persons, newPerson]
     response.json(newPerson)
