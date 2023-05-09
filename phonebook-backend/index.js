@@ -7,7 +7,7 @@ app.use(cors())
 
 app.use(express.json())
 
-// app.use(morgan('tiny'))
+app.use(express.static('build'))
 
 morgan.token('res-body', (request) => request.method === 'POST' ? JSON.stringify(request.body) : '')
 
@@ -37,7 +37,7 @@ let persons = [
     }
 ]
 
-app.get('/', (request, response) => { response.send('<h1>Hello World!</h1>')
+app.get('/', (request, response) => { response.send('phonebook-backend/build/index.html')
 })
 
 app.get('/api/persons', (request, response) => {
